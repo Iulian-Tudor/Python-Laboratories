@@ -4,6 +4,7 @@ def is_palindrome(text):
 
 def main():
     text = input("Enter what you want to check: ")
+    print(type(text))
     if is_palindrome(text):
         print("This is a palindrome")
     else:

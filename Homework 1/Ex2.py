@@ -3,7 +3,7 @@
 def main():
     prop = "This is a test for exercise 2"
     count = 0
-    vowels = {"a", "o", "i", "u", "e"}
+    vowels = {"a", "o", "i", "u", "e", "A", "O", "I", "U", "E"}
 
     for i in range(len(prop)):
         if prop[i] in vowels:
