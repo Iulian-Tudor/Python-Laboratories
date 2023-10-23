@@ -1,8 +1,8 @@
 def replace_diagonal(matrix):
-    for i in range(len(matrix)):
+    for i in range(len(matrix)-1):
         for j in range(len(matrix[i])):
             if i == j:
-                matrix[i][j] = 0
+                matrix[i+1][j] = 0
     return matrix
 
 
