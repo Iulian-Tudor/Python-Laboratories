@@ -5,28 +5,25 @@ class Matrix:
         self.data = [[0 for _ in range(cols)] for _ in range(rows)]
 
     def get(self, row, col):
-        if row < 0 or row >= self.rows or col < 0 or col >= self.cols:
-            return None
-        return self.data[row][col]
+        if 0 < row < self.rows or 0 < col < self.cols:
+            return self.data[row][col]
 
     def set(self, row, col, value):
-        if row < 0 or row >= self.rows or col < 0 or col >= self.cols:
-            return False
-        self.data[row][col] = value
-        return True
+        if 0 < row < self.rows or 0 < col < self.cols:
+            self.data[row][col] = value
+            return True
 
     def transpose(self):
         return [[self.data[j][i] for j in range(self.rows)] for i in range(self.cols)]
 
     def multiply(self, other):
-        if self.cols != other.rows:
-            return None
-        result = Matrix(self.rows, other.cols)
-        for i in range(self.rows):
-            for j in range(other.cols):
-                for k in range(self.cols):
-                    result.data[i][j] += self.data[i][k] * other.data[k][j]
-        return result
+        if self.cols == other.rows:
+            result = Matrix(self.rows, other.cols)
+            for i in range(self.rows):
+                for j in range(other.cols):
+                    for k in range(self.cols):
+                        result.data[i][j] += self.data[i][k] * other.data[k][j]
+            return result
 
     def transform(self, func):
         for i in range(self.rows):
