@@ -43,17 +43,15 @@ def fill_matrix(matrix):
 def get_matrix(matrix):
     for i in range(matrix.rows):
         for j in range(matrix.cols):
-            return matrix.get(i, j)
+            print(matrix.get(i, j), end=' ')
+        print()
 
 
 def main():
     matrix = Matrix(7, 7)
     fill_matrix(matrix)
 
-    for i in range(matrix.rows):
-        for j in range(matrix.cols):
-            print(matrix.get(i, j), end=' ')
-        print()
+    get_matrix(matrix)
 
     print(matrix.transpose())
 
