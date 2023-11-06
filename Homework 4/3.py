@@ -34,23 +34,30 @@ class Matrix:
                 self.data[i][j] = func(self.data[i][j])
 
 
+def fill_matrix(matrix):
+    for i in range(matrix.rows):
+        for j in range(matrix.cols):
+            matrix.set(i, j, i+j)
+
+
+def get_matrix(matrix):
+    for i in range(matrix.rows):
+        for j in range(matrix.cols):
+            return matrix.get(i, j)
+
+
 def main():
-    matrix = Matrix(3, 3)
-    matrix.set(0, 0, 1)
-    matrix.set(0, 1, 2)
-    matrix.set(0, 2, 3)
-    matrix.set(1, 0, 4)
-    matrix.set(1, 1, 5)
-    matrix.set(1, 2, 6)
-    matrix.set(2, 0, 7)
-    matrix.set(2, 1, 8)
-    matrix.set(2, 2, 9)
-    print(matrix.get(0, 0))
-    print(matrix.get(1, 1))
+    matrix = Matrix(7, 7)
+    fill_matrix(matrix)
+
+    for i in range(matrix.rows):
+        for j in range(matrix.cols):
+            print(matrix.get(i, j), end=' ')
+        print()
+
     print(matrix.transpose())
-    print(matrix.multiply(matrix).get(0, 0))
+
     matrix.transform(lambda x: x * 2)
-    print(matrix.get(0, 0))
 
 
 main()
