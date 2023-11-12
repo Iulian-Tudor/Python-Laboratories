@@ -58,6 +58,9 @@ def main():
     dvd.display()
     print()
     magazine.display()
+    print()
+    magazine.check_out()
+    magazine.display()
 
 
 main()
