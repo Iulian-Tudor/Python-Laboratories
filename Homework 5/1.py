@@ -1,12 +1,14 @@
 from math import pi
 import math
 
+
 class Shape:
     def area(self):
         pass
 
     def perimeter(self):
         pass
+
 
 class Circle(Shape):
     def __init__(self, radius):
@@ -17,6 +19,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return 2 * pi * self.radius
+
 
 class Rectangle(Shape):
     def __init__(self, width, height):
@@ -29,9 +32,10 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
+
 class Triangle(Shape):
     def __init__(self, a, b, c):
-        if a + b <= c or a + c <= b or b + c <= a:
+        if a + b <= c or a + c <= b or b + c <= a < 0 and b < 0 and c < 0:
             raise Exception("Invalid triangle!")
         else:
             self.a = a
