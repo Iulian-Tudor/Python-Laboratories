@@ -21,7 +21,6 @@ class Manager(Employee):
     def give_task_to_engineer(self, engineer):
         engineer.task = "Do something!"
 
-
     def __str__(self):
         return f"{self.name} {self.salary} {self.bonus}"
 
