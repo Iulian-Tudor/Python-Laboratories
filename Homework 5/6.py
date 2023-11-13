@@ -1,9 +1,12 @@
 class LibraryItem:
     def __init__(self, title, author, year):
-        self.title = title
-        self.author = author
-        self.year = year
-        self.checked_out = False
+        if year > 2023:
+            raise Exception("Items from the future aren't accepted!")
+        else:
+            self.title = title
+            self.author = author
+            self.year = year
+            self.checked_out = False
 
     def check_out(self):
         self.checked_out = True

@@ -4,7 +4,10 @@ class Account:
         self.funds = funds
 
     def deposit(self, amount):
-        self.funds += amount
+        if amount > 0:
+            self.funds += amount
+        else:
+            print("Nu poti depune o suma negativa!")
 
     def withdraw(self, amount):
         if amount > self.funds:

@@ -31,9 +31,12 @@ class Rectangle(Shape):
 
 class Triangle(Shape):
     def __init__(self, a, b, c):
-        self.a = a
-        self.b = b
-        self.c = c
+        if a + b <= c or a + c <= b or b + c <= a:
+            raise Exception("Invalid triangle!")
+        else:
+            self.a = a
+            self.b = b
+            self.c = c
 
     def area(self):
         s = (self.a + self.b + self.c) / 2
