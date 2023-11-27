@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def main():
     try:
         dir_path = sys.argv[1]
@@ -24,6 +25,7 @@ def main():
         print(str(e))
     except Exception as e:
         print(f"An unexpected error occurred: {str(e)}")
+
 
 if __name__ == "__main__":
     main()

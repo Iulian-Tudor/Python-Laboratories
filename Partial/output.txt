@@ -1,0 +1,5 @@
+longest_file_name:recunoastere_faciala.txt
+shortest_file_name:p1.rs
+first_file_second_c:No file with second letter c
+first_file_last_c:No file with last letter c
+sorted_extensions:{'.c': 0, '.py': 3, '.txt': 1, '.docx': 0}
