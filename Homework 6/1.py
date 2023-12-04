@@ -1,6 +1,7 @@
 import os
 import sys
 
+
 def main():
     try:
         dir_path = sys.argv[1]
@@ -11,7 +12,7 @@ def main():
 
         for root, dirs, files in os.walk(dir_path):
             for file in files:
-                if file.endswith(file_ext):
+                if os.path.splitext(file)[1] == file_ext:
                     try:
                         with open(os.path.join(root, file), 'r') as f:
                             print(f.read())
@@ -24,6 +25,7 @@ def main():
         print(str(e))
     except Exception as e:
         print(f"An unexpected error occurred: {str(e)}")
+
 
 if __name__ == "__main__":
     main()
